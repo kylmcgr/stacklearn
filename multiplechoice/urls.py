@@ -16,11 +16,8 @@ Including another URLconf
 from django.conf.urls import include
 from django.contrib import admin
 from django.urls import path
-from mathstack import views as mathstack_views
+from multiplechoice import views as multiplechoice_views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('math/div/', mathstack_views.BoolAnswerCreateView.as_view(), name='bool_answer_create'),
-    path('accounts/', include('django.contrib.auth.urls')),
-    path('multiplechoice/', include('multiplechoice.urls')),
+    path('', multiplechoice_views.MultipleChoiceAnswerCreateView.as_view(), name='multiple_choice_answer_create'),
 ]
