@@ -35,7 +35,7 @@ class ActiveQuestion(models.Model):
 
     def __str__(self):
         return "question for {} re: ".format(
-            self.student.username, self.q_text)
+            self.student, self.q_text)
 
 
 class BooleanAnswer(models.Model):

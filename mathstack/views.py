@@ -33,7 +33,7 @@ class BoolAnswerCreateView(StudentOnlyMixin, generic.CreateView):
         print(context_data.keys())
         # retrieve the question from `ActiveQuestion` object
         active_q = mathstack_models.ActiveQuestion.objects.filter(
-            student=self.request.user).first()
+            student__user=self.request.user).first()
         q_text = active_q.q_text  # fails if no object found
         q_dict = parse_question(q_text)
         context_data["operand1"] = q_dict["operand1"]
